@@ -207,3 +207,18 @@ button:hover{
   font-weight:bold;
   color:#ffffff;
 }
+@media(max-width:768px){
+  .hero h1{
+    font-size:32px;
+  }
+
+  .caption{
+    font-size:18px;
+    left:20px;
+    bottom:30px;
+  }
+
+  nav{
+    display:none;
+  }
+}
