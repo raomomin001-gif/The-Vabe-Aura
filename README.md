@@ -1,1 +1,2 @@
-https://github.com/khantk76988-alt/The-Vabe-Aura/blob/main/vaporesso_xros_pro_smoke.jpg?raw=true
+<img src="images/slide1.jpg" style="width:200px;border:5px solid red;">
+
