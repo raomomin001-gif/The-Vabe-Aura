@@ -1,1 +1,54 @@
+{
+  "brands": [
+    {
+      "name": "SMOK",
+      "models": [
+        {
+          "model_name": "Example Model 1",
+          "price_in_local_currency": ""
+        },
+        {
+          "model_name": "Example Model 2",
+          "price_in_local_currency": ""
+        }
+      ]
+    },
+    {
+      "name": "OXVA",
+      "models": [
+        {
+          "model_name": "Example Model A",
+          "price_in_local_currency": ""
+        }
+      ]
+    },
+    {
+      "name": "Vaporesso",
+      "models": [
+        {
+          "model_name": "Example Model X",
+          "price_in_local_currency": ""
+        }
+      ]
+    },
+    {
+      "name": "Voopoo",
+      "models": [
+        {
+          "model_name": "Example Model V",
+          "price_in_local_currency": ""
+        }
+      ]
+    },
+    {
+      "name": "Uwell",
+      "models": [
+        {
+          "model_name": "Example Model U",
+          "price_in_local_currency": ""
+        }
+      ]
+    }
+  ]
+}
 
