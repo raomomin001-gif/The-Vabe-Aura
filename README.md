@@ -9,7 +9,7 @@ Modern vape products website built using HTML & CSS.
 - WhatsApp ordering
 
 ## 🖼️ Screenshots
-![Home](images/slide1.jpg)
+![Home](https://github.com/khantk76988-alt/The-Vabe-Aura/blob/main/images/vaporessoxrosprosmoke.jpg?raw=true)
 
 ## 🚀 How to use
 1. Download project
