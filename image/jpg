@@ -1,4 +1,0 @@
-
-<div class="center">
-  <button onclick="openWhatsApp()">Order on WhatsApp</button>
-</div>
