@@ -198,3 +198,59 @@ button{
     background-position:1200px 0;
   }
 }
+/* ===== PAGE WIDTH EXPAND ===== */
+
+/* Main content width control */
+.section,
+.products,
+.slider {
+  max-width: 1400px;   /* desktop par wide look */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header full width but content centered */
+.header {
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* Hero full width but text centered */
+.hero {
+  max-width: 100%;
+}
+
+/* Slider height thori bari */
+.slider {
+  height: 560px;
+}
+
+.slides img {
+  height: 560px;
+}
+
+/* Product images thori bari */
+.product-card img {
+  height: 230px;
+}
+
+/* Mobile view adjust */
+@media (max-width: 768px) {
+  .section,
+  .products,
+  .slider {
+    max-width: 95%;
+  }
+
+  .slider {
+    height: 420px;
+  }
+
+  .slides img {
+    height: 420px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+}
