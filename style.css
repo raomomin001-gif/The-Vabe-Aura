@@ -2,8 +2,8 @@
 body{
   margin:0;
   font-family:'Poppins', Arial, sans-serif;
-  background:radial-gradient(circle at top, #1a1a1a, #000);
-  color:#fff;
+  background:radial-gradient(circle at top, #1a1a1a, #000000);
+  color:#ffffff;
 }
 
 /* ===== HEADER ===== */
@@ -12,7 +12,9 @@ body{
   justify-content:space-between;
   align-items:center;
   padding:15px 40px;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(8px);
+  box-shadow:0 5px 25px rgba(0,0,0,0.7);
 }
 
 .logo{
@@ -22,28 +24,30 @@ body{
 }
 
 nav a{
-  color:#fff;
+  color:#ffffff;
   margin:0 10px;
   text-decoration:none;
 }
-nav a:hover{ color:#00ffcc; }
+nav a:hover{
+  color:#00ffcc;
+}
 
 /* ===== HERO ===== */
 .hero{
   text-align:center;
-  padding:100px 20px;
+  padding:90px 20px;
   background:
-    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
     url("images/smoke-bg.jpg") center/cover no-repeat;
 }
 
 .hero h1{
   color:#00ffcc;
-  font-size:46px;
+  font-size:44px;
 }
 
 .hero p{
-  color:#ccc;
+  color:#cccccc;
   max-width:600px;
   margin:auto;
 }
@@ -51,20 +55,17 @@ nav a:hover{ color:#00ffcc; }
 /* ===== BUTTON ===== */
 button{
   padding:14px 32px;
-  background:#00ffcc;
+  background:linear-gradient(45deg,#00ffcc,#00bfa6);
   border:none;
   border-radius:30px;
   cursor:pointer;
-  font-weight:bold;
-}
-button:hover{
-  box-shadow:0 0 20px rgba(0,255,204,.6);
+  font-weight:600;
 }
 
-/* ===== SLIDER (IMPORTANT PART) ===== */
+/* ===== SLIDER ===== */
 .slider{
   width:100%;
-  height:500px;
+  height:480px;          /* Desktop height */
   position:relative;
   overflow:hidden;
 }
@@ -72,13 +73,13 @@ button:hover{
 .slides{
   width:100%;
   height:100%;
-  display:none;   /* JS control karega */
+  display:none;
 }
 
 .slides img{
   width:100%;
-  height:500px;
-  object-fit:cover;
+  height:100%;
+  object-fit:cover;     /* Image kabhi distort nahi hogi */
   display:block;
 }
 
@@ -87,15 +88,17 @@ button:hover{
   position:absolute;
   bottom:40px;
   left:40px;
-  background:rgba(0,0,0,.6);
+  background:rgba(0,0,0,0.6);
   color:#00ffcc;
-  padding:15px 25px;
+  padding:14px 24px;
   font-size:22px;
   border-radius:10px;
 }
 
 /* ===== PRODUCTS ===== */
-.products{ padding:60px 20px; }
+.products{
+  padding:60px 20px;
+}
 
 .product-grid{
   display:grid;
@@ -106,21 +109,28 @@ button:hover{
 }
 
 .product-card{
-  background:rgba(255,255,255,.07);
-  border-radius:20px;
+  background:rgba(255,255,255,0.06);
+  border-radius:18px;
   padding:20px;
   text-align:center;
 }
 
 .product-card img{
   width:100%;
-  height:200px;
-  object-fit:contain;
+  height:190px;          /* Desktop product image */
+  object-fit:contain;    /* Clear + full visible */
   display:block;
+  background:#000;
 }
 
-.product-card h3{ color:#00ffcc; }
-.price{ font-weight:bold; }
+.product-card h3{
+  color:#00ffcc;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+}
 
 /* ===== FOOTER ===== */
 .footer{
@@ -128,4 +138,30 @@ button:hover{
   padding:25px;
   background:#000;
   color:#aaa;
+}
+
+/* ===== MOBILE FIX ===== */
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .slider{
+    height:300px;        /* Mobile slider smaller */
+  }
+
+  .caption{
+    font-size:16px;
+    left:15px;
+    bottom:20px;
+  }
+
+  .product-card img{
+    height:140px;        /* Mobile product image */
+  }
+
+  nav{
+    display:none;
+  }
 }
