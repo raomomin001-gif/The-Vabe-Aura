@@ -254,3 +254,117 @@ button{
     height: 180px;
   }
 }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+}
+
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: #00ffcc;
+}
+
+/* AGE POPUP */
+.age-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.age-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.age-box button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #00ffcc;
+  border: none;
+  cursor: pointer;
+}
+
+/* WHY US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.why-card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* PRODUCTS */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #00ffcc;
+  border: none;
+  cursor: pointer;
+}
+
+/* REVIEWS */
+.review-card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* BLOG */
+.blog ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog li {
+  margin: 10px 0;
+}
+
+/* INSTAGRAM */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.insta-box {
+  background: #222;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
