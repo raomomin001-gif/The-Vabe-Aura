@@ -71,6 +71,7 @@ nav a:hover{
   opacity:0.25;
   animation:smokeMove 60s linear infinite;
   z-index:1;
+  pointer-events:none; /* 🔥 IMPORTANT FIX */
 }
 
 .hero h1,
@@ -95,6 +96,7 @@ button{
   font-weight:600;
   transition:0.3s;
 }
+
 button:hover{
   box-shadow:0 0 15px rgba(0,191,166,0.5);
   transform:scale(1.05);
@@ -172,7 +174,7 @@ button:hover{
   transform:translateY(0);
 }
 
-/* ===== AGE POPUP ===== */
+/* ===== AGE POPUP (FIXED FOR MOBILE) ===== */
 .age-popup{
   position:fixed;
   inset:0;
@@ -189,10 +191,18 @@ button:hover{
   border-radius:14px;
   text-align:center;
   max-width:320px;
+  z-index:10000;
 }
 
 .age-box h2{
   color:#00bfa6;
+}
+
+/* popup buttons */
+.age-box button{
+  width:100%;
+  margin-top:12px;
+  pointer-events:auto; /* 🔥 CLICK FIX */
 }
 
 /* ===== FOOTER ===== */
