@@ -9,6 +9,17 @@
 
 <body>
 
+<!-- ✅ AGE VERIFICATION POPUP -->
+<div id="agePopup" class="age-popup">
+  <div class="age-box">
+    <h2>Are you 18+ ?</h2>
+    <p>You must be 18 years or older to enter this website.</p>
+    <button onclick="acceptAge()">Yes, I am 18+</button>
+    <button onclick="rejectAge()">No</button>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="logo">THE VAPE AURA</div>
   <nav>
@@ -25,17 +36,16 @@
   </nav>
 </header>
 
-<!-- ✅ HERO WITH SMOKE -->
-<section class="hero">
+<!-- ===== HERO WITH SMOKE ===== -->
+<section class="hero fade-section">
   <div class="smoke"></div>
-
   <h1>Premium Vaping Experience</h1>
   <p>Original vape devices, pods, kits & flavours at best prices.</p>
   <button onclick="openWhatsApp()">Order on WhatsApp</button>
 </section>
 
-<!-- ✅ SLIDER (PURANE IMAGE NAAM) -->
-<section class="slider">
+<!-- ===== SLIDER ===== -->
+<section class="slider fade-section">
 
   <div class="slides">
     <img src="images/slide1.jpg">
@@ -59,66 +69,17 @@
 
 </section>
 
-<section class="section">
+<!-- ===== WHY THE VAPE AURA ===== -->
+<section class="section fade-section">
   <h2>Why The Vape Aura?</h2>
-  <p>We provide authentic vape brands like Vaporesso, SMOK, Voopoo, Uwell, Oxva and GeekVape with quality assurance.</p>
+  <p>
+    We provide authentic vape brands like Vaporesso, SMOK, Voopoo, Uwell,
+    Oxva and GeekVape with quality assurance.
+  </p>
 </section>
 
-<!-- ✅ PRODUCTS (PURANE IMAGE NAAM) -->
-<section class="products">
-  <h2 class="page-title">Our Products</h2>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="images/vape1.jpg">
-      <h3>VOOPOO VMATE Mini</h3>
-      <p>Rechargeable • Smooth Flavor</p>
-      <span class="price">Rs. 5,999</span>
-    </div>
-
-    <div class="product-card">
-      <img src="images/vape2.jpg">
-      <h3>Vaporesso XROS Pro</h3>
-      <p>30W • Digital Display</p>
-      <span class="price">Rs. 6,499</span>
-    </div>
-
-    <div class="product-card">
-      <img src="images/vape3.jpg">
-      <h3>SMOK Novo 4</h3>
-      <p>Compact • Airflow Control</p>
-      <span class="price">Rs. 4,999</span>
-    </div>
-
-  </div>
-</section>
-
-<footer class="footer">
-  © 2026 The Vape Aura | WhatsApp: 03136390937
-</footer>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>The Vape Aura</title>
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
-</head>
-<body>
-
-<!-- AGE VERIFICATION POPUP -->
-<div id="agePopup" class="age-popup">
-  <div class="age-box">
-    <h2>Are you 18+ ?</h2>
-    <p>You must be 18 years or older to enter this website.</p>
-    <button onclick="acceptAge()">Yes, I am 18+</button>
-    <button onclick="rejectAge()">No</button>
-  </div>
-</div>
-
-<!-- WHY CHOOSE US -->
-<section class="why-us">
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="why-us fade-section">
   <h2>Why Choose Us</h2>
   <div class="why-grid">
     <div class="why-card">✅ 100% Original Products</div>
@@ -128,65 +89,49 @@
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products">
-  <h2>Our Products</h2>
+<!-- ===== PRODUCTS ===== -->
+<section class="products fade-section">
+  <h2 class="page-title">Our Products</h2>
+
   <div class="product-grid">
 
-    <div class="product-card">
-      <img src="images/vape1.jpg" alt="Vape">
-      <h3>Vaporesso XROS</h3>
-      <p>Flavor: Blue Razz</p>
-      <p>Puffs: 6000</p>
-      <p>Nicotine: 20mg</p>
-      <p>Battery: 1000mAh</p>
-      <button>Order on WhatsApp</button>
+    <div class="product-card fade-section">
+      <img src="images/vape1.jpg">
+      <h3>VOOPOO VMATE Mini</h3>
+      <p>Rechargeable • Smooth Flavor</p>
+      <span class="price">Rs. 5,999</span>
     </div>
 
-    <div class="product-card">
-      <img src="images/vape2.jpg" alt="Vape">
-      <h3>OXVA Disposable</h3>
-      <p>Flavor: Mango Ice</p>
-      <p>Puffs: 8000</p>
-      <p>Nicotine: 35mg</p>
-      <p>Battery: 1200mAh</p>
-      <button>Order on WhatsApp</button>
+    <div class="product-card fade-section">
+      <img src="images/vape2.jpg">
+      <h3>Vaporesso XROS Pro</h3>
+      <p>30W • Digital Display</p>
+      <span class="price">Rs. 6,499</span>
+    </div>
+
+    <div class="product-card fade-section">
+      <img src="images/vape3.jpg">
+      <h3>SMOK Novo 4</h3>
+      <p>Compact • Airflow Control</p>
+      <span class="price">Rs. 4,999</span>
     </div>
 
   </div>
 </section>
 
-<!-- CUSTOMER REVIEWS -->
-<section class="reviews">
+<!-- ===== CUSTOMER REVIEWS ===== -->
+<section class="reviews fade-section">
   <h2>Customer Reviews</h2>
   <div class="review-card">
-    ⭐⭐⭐⭐⭐  
+    ⭐⭐⭐⭐⭐
     <p>Best vape store in Pakistan. Original products.</p>
   </div>
 </section>
 
-<!-- BLOG SECTION -->
-<section class="blog">
-  <h2>Our Blog</h2>
-  <ul>
-    <li>🔥 Best Disposable Vapes 2026</li>
-    <li>🔥 Vape vs Cigarette</li>
-    <li>🔥 How to Choose the Right Vape</li>
-  </ul>
-</section>
-
-<!-- INSTAGRAM FEED -->
-<section class="instagram">
-  <h2>Instagram Feed</h2>
-  <div class="insta-grid">
-    <div class="insta-box">Insta Pic</div>
-    <div class="insta-box">Insta Pic</div>
-    <div class="insta-box">Reel</div>
-  </div>
-</section>
-
-</body>
-</html>
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  © 2026 The Vape Aura | WhatsApp: 03136390937
+</footer>
 
 </body>
 </html>
