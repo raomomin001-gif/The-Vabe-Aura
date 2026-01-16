@@ -42,3 +42,18 @@ window.onload = function () {
     document.getElementById("agePopup").style.display = "none";
   }
 };
+const fadeSections = document.querySelectorAll(".fade-section");
+
+function fadeOnScroll() {
+  fadeSections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionTop < screenHeight - 100) {
+      section.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", fadeOnScroll);
+fadeOnScroll();
