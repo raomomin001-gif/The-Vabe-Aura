@@ -115,3 +115,85 @@ const fadeObserver = new IntersectionObserver(entries => {
 fadeSections.forEach(section => {
   fadeObserver.observe(section);
 });
+/* ===============================
+   MOBILE MENU
+================================ */
+function toggleMenu() {
+  const nav = document.querySelector("nav");
+  if (nav) {
+    nav.classList.toggle("active");
+  }
+}
+
+/* ===============================
+   WHATSAPP ORDER
+================================ */
+function openWhatsApp(product = "Vape Product") {
+  const phone = "923136390937"; // 92 ke sath number
+  const message = `Hello! I want to order ${product} from The Vape Aura.`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+/* ===============================
+   AUTO SLIDER
+================================ */
+let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.querySelectorAll(".slides");
+  if (!slides.length) return;
+
+  slides.forEach(slide => slide.style.display = "none");
+
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+
+  slides[slideIndex - 1].style.display = "block";
+
+  setTimeout(showSlides, 3000); // 3 seconds
+}
+
+document.addEventListener("DOMContentLoaded", showSlides);
+
+/* ===============================
+   AGE VERIFICATION POPUP
+================================ */
+function acceptAge() {
+  localStorage.setItem("ageVerified", "yes");
+  const popup = document.getElementById("agePopup");
+  if (popup) popup.style.display = "none";
+}
+
+function rejectAge() {
+  window.location.href = "https://www.google.com";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("agePopup");
+  const verified = localStorage.getItem("ageVerified");
+
+  if (verified === "yes" && popup) {
+    popup.style.display = "none";
+  }
+});
+
+/* ===============================
+   SCROLL FADE ANIMATION
+================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeSections = document.querySelectorAll(".fade-section");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  fadeSections.forEach(section => observer.observe(section));
+});
