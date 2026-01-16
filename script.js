@@ -28,3 +28,17 @@ function showSlides(){
 
   setTimeout(showSlides, 3000); // 3 seconds
 }
+function acceptAge() {
+  document.getElementById("agePopup").style.display = "none";
+  localStorage.setItem("ageVerified", "true");
+}
+
+function rejectAge() {
+  window.location.href = "https://google.com";
+}
+
+window.onload = function () {
+  if (localStorage.getItem("ageVerified")) {
+    document.getElementById("agePopup").style.display = "none";
+  }
+};
