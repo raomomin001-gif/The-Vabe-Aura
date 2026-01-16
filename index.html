@@ -9,13 +9,15 @@
 
 <body>
 
-<!-- ✅ AGE VERIFICATION POPUP -->
+<!-- ✅ AGE VERIFICATION POPUP (FIXED FOR MOBILE) -->
 <div id="agePopup" class="age-popup">
   <div class="age-box">
     <h2>Are you 18+ ?</h2>
     <p>You must be 18 years or older to enter this website.</p>
-    <button onclick="acceptAge()">Yes, I am 18+</button>
-    <button onclick="rejectAge()">No</button>
+
+    <!-- ✅ BUTTON CLASSES ADDED -->
+    <button class="yes-btn" onclick="acceptAge()">Yes, I am 18+</button>
+    <button class="no-btn" onclick="rejectAge()">No</button>
   </div>
 </div>
 
