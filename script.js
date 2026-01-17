@@ -12,7 +12,7 @@ function toggleMenu() {
    WHATSAPP ORDER
 ================================ */
 function openWhatsApp(product = "Vape Product") {
-  const phone = "923136390937";
+  const phone = "923042249321";
   const message = `Hello! I want to order ${product} from The Vape Aura.`;
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
