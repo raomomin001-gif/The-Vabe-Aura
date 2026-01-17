@@ -4,28 +4,23 @@
 <meta charset="UTF-8">
 <title>The Vape Aura | Premium Vape Store</title>
 
-<!-- SEO -->
-<meta name="description" content="The Vape Aura – Premium vape devices, pods, kits & accessories in Pakistan.">
-<meta name="keywords" content="vape, vape store, vape pakistan, vape aura">
-<meta name="author" content="The Vape Aura">
+<meta name="description" content="The Vape Aura – Authentic vape devices, pods, kits & flavours in Pakistan.">
+<meta name="keywords" content="vape, vape pakistan, vape store, vape aura">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= AGE VERIFICATION ================= -->
+<!-- ================= AGE POPUP ================= -->
 <div class="age-popup" id="agePopup">
   <div class="age-box">
     <h2>18+ Only</h2>
     <p>This website is for adults only.</p>
     <button onclick="acceptAge()">I am 18+</button>
-    <button onclick="denyAge()">Exit</button>
+    <button onclick="rejectAge()">Exit</button>
   </div>
 </div>
 
@@ -35,8 +30,9 @@
 
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-  <nav id="menu">
+  <nav>
     <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="brands.html">Brands</a>
     <a href="devices.html">Devices</a>
     <a href="kits.html">Kits</a>
@@ -48,111 +44,85 @@
   </nav>
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO + SLIDER ================= -->
 <section class="hero fade-section">
   <div class="smoke"></div>
 
-  <h1>Premium Vape Experience</h1>
-  <p>Original Products • Trusted Brands • Best Prices</p>
+  <div class="slides">
+    <h1>Premium Vape Experience</h1>
+    <p>Original • Trusted • Best Prices</p>
+  </div>
+
+  <div class="slides">
+    <h1>Top Vape Brands</h1>
+    <p>SMOK • Vaporesso • OXVA • Voopoo • Uwell</p>
+  </div>
+
+  <div class="slides">
+    <h1>Order on WhatsApp</h1>
+    <p>Fast support & nationwide delivery</p>
+  </div>
 
   <button onclick="openWhatsApp()">Order on WhatsApp</button>
-  <button onclick="callNow()">Call Now</button>
 </section>
 
-<!-- ================= FEATURED PRODUCTS ================= -->
+<!-- ================= PRODUCTS ================= -->
 <section class="products fade-section">
-  <h2 style="text-align:center">Popular Products</h2>
+  <h2 style="text-align:center">Popular Categories</h2>
 
   <div class="product-grid">
-
     <div class="product-card">
-      <img src="images/vape1.jpg" alt="Vape Device">
       <h3>Vape Devices</h3>
+      <p>Pods, Box Mods & Disposables</p>
+      <button onclick="location.href='devices.html'">View</button>
     </div>
 
     <div class="product-card">
-      <img src="images/vape2.jpg" alt="Vape Pods">
-      <h3>Vape Pods</h3>
-    </div>
-
-    <div class="product-card">
-      <img src="images/vape3.jpg" alt="Vape Kits">
       <h3>Vape Kits</h3>
+      <p>Complete kits for long-term use</p>
+      <button onclick="location.href='kits.html'">View</button>
     </div>
 
     <div class="product-card">
-      <img src="images/flouer4.jpg" alt="Vape Flavours">
-      <h3>Premium Flavours</h3>
+      <h3>Pod Systems</h3>
+      <p>Beginner & Expert pods</p>
+      <button onclick="location.href='pods.html'">View</button>
     </div>
 
+    <div class="product-card">
+      <h3>Flavours</h3>
+      <p>Premium taste flavours</p>
+      <button onclick="location.href='flavours.html'">View</button>
+    </div>
   </div>
 </section>
 
-<!-- ================= WHY CHOOSE US ================= -->
+<!-- ================= WHY US ================= -->
 <section class="products fade-section">
-  <h2 style="text-align:center">Why Choose The Vape Aura?</h2>
+  <h2 style="text-align:center">Why Choose Us?</h2>
 
   <div class="why-grid">
     <div class="why-card">✔ 100% Original Products</div>
+    <div class="why-card">✔ All Pakistan Delivery</div>
     <div class="why-card">✔ Trusted Vape Brands</div>
-    <div class="why-card">✔ Best Market Prices</div>
-    <div class="why-card">✔ Fast WhatsApp Support</div>
+    <div class="why-card">✔ WhatsApp Order Support</div>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 <section class="products fade-section">
-  <h2 style="text-align:center">Contact Us</h2>
-  <p style="text-align:center">📞 Phone / WhatsApp: <strong>0304-2249321</strong></p>
-  <p style="text-align:center">📧 Email: info@thevapeaura.com</p>
+  <h2 style="text-align:center">Contact</h2>
+  <p style="text-align:center">📞 WhatsApp: <b>0304-2249321</b></p>
+  <p style="text-align:center">📧 Email: support@thevapeaura.com</p>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <p>© 2026 The Vape Aura. All Rights Reserved.</p>
+  © 2026 The Vape Aura – All Rights Reserved
 </footer>
 
-<!-- JS -->
+<!-- ================= JS ================= -->
 <script src="script.js"></script>
-
-<script>
-/* Mobile menu */
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-
-/* WhatsApp */
-function openWhatsApp(){
-  window.open(
-    "https://wa.me/923042249321?text=Hi%20I%20want%20to%20order%20from%20The%20Vape%20Aura",
-    "_blank"
-  );
-}
-
-/* Call */
-function callNow(){
-  window.location.href = "tel:+923042249321";
-}
-
-/* Age popup */
-function acceptAge(){
-  document.getElementById("agePopup").style.display="none";
-}
-function denyAge(){
-  window.location.href="https://www.google.com";
-}
-
-/* Scroll fade animation */
-const sections = document.querySelectorAll(".fade-section");
-window.addEventListener("scroll",()=>{
-  sections.forEach(sec=>{
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add("show");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
