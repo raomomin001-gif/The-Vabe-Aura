@@ -4,23 +4,18 @@
 <meta charset="UTF-8">
 <title>The Vape Aura | Premium Vape Store</title>
 
-<!-- SEO -->
-<meta name="description" content="The Vape Aura – Premium vape devices, pods, disposables & accessories in Pakistan.">
-<meta name="keywords" content="vape, vape store, vape pakistan, the vape aura">
-<meta name="author" content="The Vape Aura">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Vape Aura – Premium vape devices, pods & flavours in Pakistan.">
 
 <style>
-/* ===== GLOBAL ===== */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#0e0e0e;
   color:#fff;
 }
-a{color:#00ffcc;text-decoration:none}
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   display:flex;
   justify-content:space-between;
@@ -31,156 +26,186 @@ a{color:#00ffcc;text-decoration:none}
   top:0;
 }
 .logo{
+  color:#00ffcc;
   font-size:22px;
   font-weight:bold;
-  color:#00ffcc;
 }
 nav a{
+  color:#00ffcc;
   margin-left:20px;
+  text-decoration:none;
 }
 
-/* ===== HERO ===== */
-.hero{
+/* SLIDER */
+.slider{
+  position:relative;
+  height:70vh;
+  overflow:hidden;
+}
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+.slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.slide.active{
+  opacity:1;
+}
+
+/* HERO TEXT */
+.hero-text{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
   text-align:center;
-  padding:80px 20px;
-  background:linear-gradient(to right,#000,#111);
+  background:rgba(0,0,0,0.5);
+  padding:25px;
+  border-radius:8px;
 }
-.hero h1{font-size:42px}
-.hero p{font-size:18px;margin:10px 0 25px}
+.hero-text h1{font-size:40px}
+.hero-text p{font-size:18px}
 
-/* ===== BUTTONS ===== */
+/* BUTTONS */
 .btn{
-  padding:14px 24px;
+  padding:12px 22px;
   border:none;
   border-radius:6px;
-  font-size:16px;
   cursor:pointer;
   margin:8px;
+  font-size:15px;
 }
-.whatsapp{background:#25d366;color:#000}
-.call{background:#00ffcc;color:#000}
+.whatsapp{background:#25d366}
+.call{background:#00ffcc}
 
-/* ===== PRODUCTS ===== */
+/* PRODUCTS */
 .products{
   padding:60px 20px;
   text-align:center;
 }
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:20px;
-  margin-top:30px;
 }
 .product{
-  padding:20px;
   background:#151515;
+  padding:15px;
   border-radius:8px;
 }
-
-/* ===== ABOUT & CONTACT ===== */
-.about,.contact{
-  padding:60px 20px;
-  max-width:800px;
-  margin:auto;
-  text-align:center;
+.product img{
+  width:100%;
+  border-radius:6px;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{
   background:#111;
   text-align:center;
   padding:15px;
-  font-size:14px;
+  margin-top:40px;
 }
 
-/* ===== AGE POPUP ===== */
-#agePopup{
-  position:fixed;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.9);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
-}
-.age-box{
-  background:#111;
-  padding:30px;
-  border-radius:8px;
-  text-align:center;
-  max-width:320px;
-}
-.age-box button{
-  margin:10px;
-}
-
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
   nav{display:none}
-  .hero h1{font-size:30px}
+  .hero-text h1{font-size:28px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- AGE VERIFICATION -->
-<div id="agePopup">
-  <div class="age-box">
-    <h2>18+ Only</h2>
-    <p>This website is for adults only.</p>
-    <button class="btn call" onclick="acceptAge()">I am 18+</button>
-    <button class="btn" onclick="denyAge()">Exit</button>
-  </div>
-</div>
-
 <!-- HEADER -->
 <header class="header">
   <div class="logo">The Vape Aura</div>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <h1>Premium Vape Experience</h1>
-  <p>Top Vape Brands • Original Products • Best Prices</p>
+<!-- SLIDER -->
+<div class="slider">
 
-  <button class="btn whatsapp" onclick="openWhatsApp()">Order on WhatsApp</button>
-  <button class="btn call" onclick="callNow()">Call Now</button>
-</section>
+  <div class="slide active">
+    <img src="images/slide1.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="images/slide2.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="images/slide3.jpg">
+  </div>
+
+  <div class="slide">
+    <img src="images/slide4.jpg">
+  </div>
+
+  <div class="hero-text">
+    <h1>Premium Vape Experience</h1>
+    <p>Original Products • Trusted Brands</p>
+    <button class="btn whatsapp" onclick="openWhatsApp()">WhatsApp Order</button>
+    <button class="btn call" onclick="callNow()">Call Now</button>
+  </div>
+
+</div>
 
 <!-- PRODUCTS -->
-<section class="products" id="products">
-  <h2>Our Brands</h2>
+<section class="products">
+  <h2>Our Flavours</h2>
   <div class="product-grid">
-    <div class="product">SMOK</div>
-    <div class="product">OXVA</div>
-    <div class="product">VAPORESSO</div>
-    <div class="product">VOOPOO</div>
-    <div class="product">UWELL</div>
+
+    <div class="product">
+      <img src="images/allflaouer.jpg">
+      <p>All Flavours</p>
+    </div>
+
+    <div class="product">
+      <img src="images/blubareri.jpg">
+      <p>Blueberry</p>
+    </div>
+
+    <div class="product">
+      <img src="images/mintice.jpg">
+      <p>Mint Ice</p>
+    </div>
+
+    <div class="product">
+      <img src="images/minticeblu.jpg">
+      <p>Mint Ice Blue</p>
+    </div>
+
+    <div class="product">
+      <img src="images/flouer4.jpg">
+      <p>Special Flavour</p>
+    </div>
+
+    <div class="product">
+      <img src="images/vape1.jpg">
+      <p>Vape Device</p>
+    </div>
+
+    <div class="product">
+      <img src="images/vape2.jpg">
+      <p>Vape Pod</p>
+    </div>
+
+    <div class="product">
+      <img src="images/vape3.jpg">
+      <p>Vape Kit</p>
+    </div>
+
   </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <h2>About Us</h2>
-  <p>
-    The Vape Aura is a trusted vape store providing premium quality vape devices,
-    pods, disposables, and accessories. Authentic products & fast service.
-  </p>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>📞 Phone / WhatsApp: <strong>0304-2249321</strong></p>
-  <p>📧 Email: info@thevapeaura.com</p>
 </section>
 
 <!-- FOOTER -->
@@ -189,17 +214,20 @@ nav a{
 </footer>
 
 <script>
+let slides=document.querySelectorAll(".slide");
+let index=0;
+
+setInterval(()=>{
+  slides[index].classList.remove("active");
+  index=(index+1)%slides.length;
+  slides[index].classList.add("active");
+},4000);
+
 function openWhatsApp(){
   window.open("https://wa.me/923042249321?text=Hi%20I%20want%20to%20order%20from%20The%20Vape%20Aura","_blank");
 }
 function callNow(){
   window.location.href="tel:+923042249321";
-}
-function acceptAge(){
-  document.getElementById("agePopup").style.display="none";
-}
-function denyAge(){
-  window.location.href="https://www.google.com";
 }
 </script>
 
