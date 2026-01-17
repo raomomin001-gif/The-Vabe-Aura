@@ -157,3 +157,42 @@ button{
   nav.active{display:flex;}
   .menu-toggle{display:block;}
 }
+/* ===== SLIDER ===== */
+.slider{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.slides{
+  width:100%;
+  max-width:900px;
+  display:none;
+  margin:auto;
+  border-radius:18px;
+}
+
+/* thumbnails */
+.thumbs{
+  margin-top:15px;
+}
+
+.thumbs img{
+  width:80px;
+  height:50px;
+  object-fit:cover;
+  margin:5px;
+  cursor:pointer;
+  border-radius:8px;
+  opacity:0.6;
+}
+
+.thumbs img:hover{
+  opacity:1;
+}
+
+/* product price */
+.price{
+  margin-top:6px;
+  color:#222;
+  font-weight:600;
+}
