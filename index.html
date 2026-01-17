@@ -13,7 +13,7 @@
 
 <body>
 
-<!-- ========== AGE VERIFICATION ========== -->
+<!-- ===== AGE VERIFICATION ===== -->
 <div class="age-popup" id="agePopup">
   <div class="age-box">
     <h2>18+ Only</h2>
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<!-- ========== HEADER ========== -->
+<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="logo">The Vape Aura</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -40,82 +40,39 @@
   </nav>
 </header>
 
-<!-- ========== HERO WITH SMOKE ANIMATION ========== -->
+<!-- ===== HERO WITH SMOKE ===== -->
 <section class="hero fade-section">
   <div class="smoke"></div>
-
   <h1>Premium Vape Experience</h1>
   <p>Original Products • Trusted Brands • Best Prices</p>
-
   <button onclick="openWhatsApp()">Order on WhatsApp</button>
 </section>
 
-<!-- ========== SLIDER (EXACT IMAGE NAMES) ========== -->
+<!-- ===== SLIDER ===== -->
 <section class="slider fade-section">
-  <img class="slides" src="images/slide1.jpg" alt="Vape Slide 1">
-  <img class="slides" src="images/slide2.jpg" alt="Vape Slide 2">
-  <img class="slides" src="images/slide3.jpg" alt="Vape Slide 3">
-  <img class="slides" src="images/slide4.jpg" alt="Vape Slide 4">
-</section>
+  <img class="slides" src="images/slide1.jpg">
+  <img class="slides" src="images/slide2.jpg">
+  <img class="slides" src="images/slide3.jpg">
+  <img class="slides" src="images/slide4.jpg">
 
-<!-- ========== PRODUCTS (EXACT IMAGE NAMES) ========== -->
-<section class="products fade-section">
-  <h2 style="text-align:center">Popular Products</h2>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="images/vape1.jpg" alt="Vape Device">
-      <h3>Vape Device</h3>
-      <button onclick="location.href='devices.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/vape2.jpg" alt="Vape Pod">
-      <h3>Pod System</h3>
-      <button onclick="location.href='pods.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/vape3.jpg" alt="Vape Kit">
-      <h3>Vape Kit</h3>
-      <button onclick="location.href='kits.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/flouer4.jpg" alt="Vape Flavour">
-      <h3>Flavours</h3>
-      <button onclick="location.href='flavours.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/allflaouer.jpg" alt="All Flavours">
-      <h3>All Flavours</h3>
-      <button onclick="location.href='flavours.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/mintice.jpg" alt="Mint Ice">
-      <h3>Mint Ice</h3>
-      <button onclick="location.href='flavours.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/minticeblu.jpg" alt="Mint Ice Blue">
-      <h3>Mint Ice Blue</h3>
-      <button onclick="location.href='flavours.html'">View</button>
-    </div>
-
-    <div class="product-card">
-      <img src="images/blubareri.jpg" alt="Blueberry">
-      <h3>Blueberry</h3>
-      <button onclick="location.href='flavours.html'">View</button>
-    </div>
-
+  <!-- thumbnails -->
+  <div class="thumbs">
+    <img src="images/slide1.jpg" onclick="currentSlide(1)">
+    <img src="images/slide2.jpg" onclick="currentSlide(2)">
+    <img src="images/slide3.jpg" onclick="currentSlide(3)">
+    <img src="images/slide4.jpg" onclick="currentSlide(4)">
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- ===== PRODUCTS AUTO LOAD ===== -->
+<section class="products fade-section">
+  <h2 style="text-align:center">Our Products</h2>
+  <div class="product-grid" id="productGrid">
+    <!-- JSON se products yahan ayenge -->
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
 © 2026 The Vape Aura | WhatsApp: 0304-2249321
 </footer>
