@@ -5,32 +5,45 @@
 <title>Online Order | The Vape Aura</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="logo">The Vape Aura</div>
-</header>
-
-<section class="feedback">
+<section class="section">
   <h2>Online Order Form</h2>
 
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email" required>
+  <form class="form">
+
+    <!-- NAME -->
+    <input type="text" placeholder="Full Name" required>
+
+    <!-- PHONE -->
+    <input type="tel" placeholder="Phone Number" required>
+
+    <!-- CNIC NUMBER -->
+    <input type="text" placeholder="CNIC Number (xxxxx-xxxxxxx-x)" required>
+
+    <!-- PRODUCT -->
     <input type="text" placeholder="Product Name" required>
-    <input type="number" placeholder="Quantity" required>
-    <textarea placeholder="Order Details"></textarea>
-    <button type="submit">Submit Order</button>
+
+    <!-- ADDRESS -->
+    <textarea placeholder="Complete Delivery Address" required></textarea>
+
+    <!-- CNIC IMAGE -->
+    <label>Upload CNIC Picture</label>
+    <input type="file" accept="image/*" required>
+
+    <!-- PASSPORT SIZE PHOTO -->
+    <label>Upload Passport Size Photo</label>
+    <input type="file" accept="image/*" required>
+
+    <!-- SUBMIT -->
+    <button type="submit">Place Order</button>
+
   </form>
 </section>
 
-<footer class="footer">
-© 2026 The Vape Aura
-</footer>
-
 </body>
 </html>
-
