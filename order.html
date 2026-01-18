@@ -37,7 +37,8 @@
 }
 
 .order-group input,
-.order-group textarea{
+.order-group textarea,
+.order-group select{
   width:100%;
   padding:12px 14px;
   border-radius:10px;
@@ -48,6 +49,12 @@
 .order-group textarea{
   resize:none;
   height:90px;
+}
+
+.mg-note{
+  font-size:12px;
+  color:#666;
+  margin-top:5px;
 }
 
 .order-submit{
@@ -89,16 +96,28 @@
       <input type="tel" placeholder="03xx-xxxxxxx" required>
     </div>
 
-    <!-- MG NAME -->
-    <div class="order-group">
-      <label>MG / Reference Name</label>
-      <input type="text" placeholder="Enter MG or reference name (optional)">
-    </div>
-
     <!-- PRODUCT -->
     <div class="order-group">
       <label>Product Name</label>
       <input type="text" placeholder="Product you want to order" required>
+    </div>
+
+    <!-- MG / NICOTINE STRENGTH -->
+    <div class="order-group">
+      <label>Nicotine Strength (MG)</label>
+      <select required>
+        <option value="">Select MG</option>
+        <option>3 MG</option>
+        <option>6 MG</option>
+        <option>12 MG</option>
+        <option>20 MG</option>
+        <option>30 MG</option>
+        <option>35 MG</option>
+        <option>50 MG</option>
+      </select>
+      <div class="mg-note">
+        Example: 3mg / 6mg (Low), 30mg / 50mg (High Nicotine)
+      </div>
     </div>
 
     <!-- ADDRESS -->
@@ -107,12 +126,13 @@
       <textarea placeholder="Complete delivery address" required></textarea>
     </div>
 
-    <!-- CNIC SECTION -->
+    <!-- CNIC NUMBER -->
     <div class="order-group">
       <label>CNIC Number</label>
       <input type="text" placeholder="xxxxx-xxxxxxx-x" required>
     </div>
 
+    <!-- CNIC IMAGE -->
     <div class="order-group">
       <label>Upload CNIC Picture</label>
       <input type="file" accept="image/*" required>
