@@ -7,151 +7,81 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
-<style>
-/* ===== ORDER PAGE EXTRA STYLE ===== */
-.order-container{
-  max-width:500px;
-  margin:40px auto;
-  background:#ffffff;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.order-container h2{
-  text-align:center;
-  color:#00bfa6;
-  margin-bottom:25px;
-}
-
-.order-group{
-  margin-bottom:18px;
-}
-
-.order-group label{
-  display:block;
-  font-size:14px;
-  margin-bottom:6px;
-  color:#333;
-}
-
-.order-group input,
-.order-group textarea,
-.order-group select{
-  width:100%;
-  padding:12px 14px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-family:Poppins, sans-serif;
-}
-
-.order-group textarea{
-  resize:none;
-  height:90px;
-}
-
-.mg-note{
-  font-size:12px;
-  color:#666;
-  margin-top:5px;
-}
-
-.order-submit{
-  width:100%;
-  padding:14px;
-  background:linear-gradient(45deg,#00ffcc,#00bfa6);
-  border:none;
-  border-radius:30px;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.order-submit:hover{
-  box-shadow:0 0 15px rgba(0,191,166,0.6);
-  transform:scale(1.05);
-}
-</style>
 </head>
 
 <body>
 
-<section class="order-container">
-
+<section class="section">
   <h2>Online Order Form</h2>
 
-  <form>
+  <form class="form" onsubmit="sendOrderToWhatsApp(event)">
 
-    <!-- CUSTOMER NAME -->
-    <div class="order-group">
-      <label>Full Name</label>
-      <input type="text" placeholder="Enter your full name" required>
-    </div>
+    <!-- NAME -->
+    <input type="text" id="name" placeholder="Full Name" required>
 
     <!-- PHONE -->
-    <div class="order-group">
-      <label>Phone Number</label>
-      <input type="tel" placeholder="03xx-xxxxxxx" required>
-    </div>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
 
     <!-- PRODUCT -->
-    <div class="order-group">
-      <label>Product Name</label>
-      <input type="text" placeholder="Product you want to order" required>
-    </div>
+    <input type="text" id="product" placeholder="Product Name" required>
 
-    <!-- MG / NICOTINE STRENGTH -->
-    <div class="order-group">
-      <label>Nicotine Strength (MG)</label>
-      <select required>
-        <option value="">Select MG</option>
-        <option>3 MG</option>
-        <option>6 MG</option>
-        <option>12 MG</option>
-        <option>20 MG</option>
-        <option>30 MG</option>
-        <option>35 MG</option>
-        <option>50 MG</option>
-      </select>
-      <div class="mg-note">
-        Example: 3mg / 6mg (Low), 30mg / 50mg (High Nicotine)
-      </div>
-    </div>
+    <!-- MG SELECTION -->
+    <select id="mg" required>
+      <option value="">Select MG</option>
+      <option>3 MG</option>
+      <option>6 MG</option>
+      <option>30 MG</option>
+      <option>50 MG</option>
+    </select>
 
     <!-- ADDRESS -->
-    <div class="order-group">
-      <label>Delivery Address</label>
-      <textarea placeholder="Complete delivery address" required></textarea>
-    </div>
+    <textarea id="address" placeholder="Complete Delivery Address" required></textarea>
 
     <!-- CNIC NUMBER -->
-    <div class="order-group">
-      <label>CNIC Number</label>
-      <input type="text" placeholder="xxxxx-xxxxxxx-x" required>
-    </div>
+    <input type="text" id="cnic" placeholder="CNIC Number (xxxxx-xxxxxxx-x)" required>
 
     <!-- CNIC IMAGE -->
-    <div class="order-group">
-      <label>Upload CNIC Picture</label>
-      <input type="file" accept="image/*" required>
-    </div>
+    <label>Upload CNIC Picture</label>
+    <input type="file" accept="image/*" required>
 
     <!-- PASSPORT PHOTO -->
-    <div class="order-group">
-      <label>Upload Passport Size Photo</label>
-      <input type="file" accept="image/*" required>
-    </div>
+    <label>Upload Passport Size Photo</label>
+    <input type="file" accept="image/*" required>
 
     <!-- SUBMIT -->
-    <button type="submit" class="order-submit">
-      Place Order
-    </button>
+    <button type="submit" class="btn">Place Order</button>
 
   </form>
-
 </section>
+
+<script>
+function sendOrderToWhatsApp(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const product = document.getElementById("product").value;
+  const mg = document.getElementById("mg").value;
+  const address = document.getElementById("address").value;
+  const cnic = document.getElementById("cnic").value;
+
+  const message =
+`📦 *New Online Order - The Vape Aura*
+
+👤 Name: ${name}
+📞 Phone: ${phone}
+🧪 Product: ${product}
+💨 MG: ${mg}
+🪪 CNIC: ${cnic}
+📍 Address: ${address}`;
+
+  const url = "https://wa.me/923042249321?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+
+  e.target.reset(); // form clear
+}
+</script>
 
 </body>
 </html>
