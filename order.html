@@ -7,42 +7,130 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== ORDER PAGE EXTRA STYLE ===== */
+.order-container{
+  max-width:500px;
+  margin:40px auto;
+  background:#ffffff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.order-container h2{
+  text-align:center;
+  color:#00bfa6;
+  margin-bottom:25px;
+}
+
+.order-group{
+  margin-bottom:18px;
+}
+
+.order-group label{
+  display:block;
+  font-size:14px;
+  margin-bottom:6px;
+  color:#333;
+}
+
+.order-group input,
+.order-group textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-family:Poppins, sans-serif;
+}
+
+.order-group textarea{
+  resize:none;
+  height:90px;
+}
+
+.order-submit{
+  width:100%;
+  padding:14px;
+  background:linear-gradient(45deg,#00ffcc,#00bfa6);
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.order-submit:hover{
+  box-shadow:0 0 15px rgba(0,191,166,0.6);
+  transform:scale(1.05);
+}
+</style>
 </head>
 
 <body>
 
-<section class="section">
+<section class="order-container">
+
   <h2>Online Order Form</h2>
 
-  <form class="form">
+  <form>
 
-    <!-- NAME -->
-    <input type="text" placeholder="Full Name" required>
+    <!-- CUSTOMER NAME -->
+    <div class="order-group">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name" required>
+    </div>
 
     <!-- PHONE -->
-    <input type="tel" placeholder="Phone Number" required>
+    <div class="order-group">
+      <label>Phone Number</label>
+      <input type="tel" placeholder="03xx-xxxxxxx" required>
+    </div>
 
-    <!-- CNIC NUMBER -->
-    <input type="text" placeholder="CNIC Number (xxxxx-xxxxxxx-x)" required>
+    <!-- MG NAME -->
+    <div class="order-group">
+      <label>MG / Reference Name</label>
+      <input type="text" placeholder="Enter MG or reference name (optional)">
+    </div>
 
     <!-- PRODUCT -->
-    <input type="text" placeholder="Product Name" required>
+    <div class="order-group">
+      <label>Product Name</label>
+      <input type="text" placeholder="Product you want to order" required>
+    </div>
 
     <!-- ADDRESS -->
-    <textarea placeholder="Complete Delivery Address" required></textarea>
+    <div class="order-group">
+      <label>Delivery Address</label>
+      <textarea placeholder="Complete delivery address" required></textarea>
+    </div>
 
-    <!-- CNIC IMAGE -->
-    <label>Upload CNIC Picture</label>
-    <input type="file" accept="image/*" required>
+    <!-- CNIC SECTION -->
+    <div class="order-group">
+      <label>CNIC Number</label>
+      <input type="text" placeholder="xxxxx-xxxxxxx-x" required>
+    </div>
 
-    <!-- PASSPORT SIZE PHOTO -->
-    <label>Upload Passport Size Photo</label>
-    <input type="file" accept="image/*" required>
+    <div class="order-group">
+      <label>Upload CNIC Picture</label>
+      <input type="file" accept="image/*" required>
+    </div>
+
+    <!-- PASSPORT PHOTO -->
+    <div class="order-group">
+      <label>Upload Passport Size Photo</label>
+      <input type="file" accept="image/*" required>
+    </div>
 
     <!-- SUBMIT -->
-    <button type="submit">Place Order</button>
+    <button type="submit" class="order-submit">
+      Place Order
+    </button>
 
   </form>
+
 </section>
 
 </body>
