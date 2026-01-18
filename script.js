@@ -152,3 +152,22 @@ document.addEventListener("DOMContentLoaded",()=>{
   }
   showSlides();
 });
+/* ===== AGE POPUP FIX ===== */
+function acceptAge(){
+  localStorage.setItem("ageVerified","yes");
+  document.getElementById("agePopup").classList.add("hide");
+  document.body.style.overflow = "auto";
+}
+
+function rejectAge(){
+  window.location.href = "https://google.com";
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  if(localStorage.getItem("ageVerified") === "yes"){
+    document.getElementById("agePopup").classList.add("hide");
+    document.body.style.overflow = "auto";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
+});
