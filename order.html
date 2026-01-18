@@ -6,7 +6,102 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  font-family:Poppins,Arial,sans-serif;
+  background:#f8f8f8;
+  margin:0;
+  padding:0;
+}
+
+/* ===== SECTION ===== */
+.section{
+  max-width:420px;
+  margin:60px auto;
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* ===== FORM ===== */
+.form input,
+.form textarea,
+.form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+/* ===== BUTTON ===== */
+.submit-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  font-weight:600;
+  color:#000;
+  background:linear-gradient(45deg,#00ffcc,#00bfa6);
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 6px 15px rgba(0,191,166,0.4);
+}
+
+.submit-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,191,166,0.6);
+}
+
+/* ===== THANK YOU POPUP ===== */
+.thankyou{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  display:none;
+}
+
+.thank-box{
+  background:#fff;
+  padding:30px;
+  border-radius:14px;
+  text-align:center;
+  animation:pop 0.4s ease;
+}
+
+@keyframes pop{
+  from{ transform:scale(0.7); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+
+.thank-box h3{
+  color:#00bfa6;
+}
+
+.thank-box button{
+  margin-top:15px;
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:#00bfa6;
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
@@ -14,72 +109,68 @@
 <section class="section">
   <h2>Online Order Form</h2>
 
-  <form class="form" onsubmit="sendOrderToWhatsApp(event)">
+  <form class="form" onsubmit="sendOrder(event)">
 
-    <!-- NAME -->
     <input type="text" id="name" placeholder="Full Name" required>
-
-    <!-- PHONE -->
     <input type="tel" id="phone" placeholder="Phone Number" required>
-
-    <!-- PRODUCT -->
-    <input type="text" id="product" placeholder="Product Name" required>
 
     <!-- MG SELECTION -->
     <select id="mg" required>
-      <option value="">Select MG</option>
+      <option value="">Select Nicotine Strength (MG)</option>
       <option>3 MG</option>
       <option>6 MG</option>
       <option>30 MG</option>
       <option>50 MG</option>
     </select>
 
-    <!-- ADDRESS -->
+    <input type="text" id="product" placeholder="Product Name" required>
+
     <textarea id="address" placeholder="Complete Delivery Address" required></textarea>
 
-    <!-- CNIC NUMBER -->
-    <input type="text" id="cnic" placeholder="CNIC Number (xxxxx-xxxxxxx-x)" required>
-
-    <!-- CNIC IMAGE -->
-    <label>Upload CNIC Picture</label>
-    <input type="file" accept="image/*" required>
-
-    <!-- PASSPORT PHOTO -->
-    <label>Upload Passport Size Photo</label>
-    <input type="file" accept="image/*" required>
-
-    <!-- SUBMIT -->
-    <button type="submit" class="btn">Place Order</button>
+    <button class="submit-btn" type="submit">
+      Place Order on WhatsApp
+    </button>
 
   </form>
 </section>
 
+<!-- ===== THANK YOU POPUP ===== -->
+<div class="thankyou" id="thankPopup">
+  <div class="thank-box">
+    <h3>Thank You! 🎉</h3>
+    <p>Your order has been sent on WhatsApp.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
 <script>
-function sendOrderToWhatsApp(e){
+function sendOrder(e){
   e.preventDefault();
 
   const name = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
-  const product = document.getElementById("product").value;
   const mg = document.getElementById("mg").value;
+  const product = document.getElementById("product").value;
   const address = document.getElementById("address").value;
-  const cnic = document.getElementById("cnic").value;
 
   const message =
-`📦 *New Online Order - The Vape Aura*
-
+`🛒 *New Online Order*
 👤 Name: ${name}
 📞 Phone: ${phone}
-🧪 Product: ${product}
 💨 MG: ${mg}
-🪪 CNIC: ${cnic}
-📍 Address: ${address}`;
+📦 Product: ${product}
+🏠 Address: ${address}`;
 
   const url = "https://wa.me/923042249321?text=" + encodeURIComponent(message);
 
-  window.open(url, "_blank");
+  window.open(url,"_blank");
 
-  e.target.reset(); // form clear
+  // show thank you popup
+  document.getElementById("thankPopup").style.display="flex";
+}
+
+function closePopup(){
+  document.getElementById("thankPopup").style.display="none";
 }
 </script>
 
