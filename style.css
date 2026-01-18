@@ -1,131 +1,4 @@
-/* ===== GLOBAL ===== */
-body{
-  margin:0;
-  font-family:'Poppins', Arial, sans-serif;
-  background:#fff;
-  color:#222;
-}
-
-/* ===== HEADER ===== */
-.header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 30px;
-  background:rgba(255,255,255,0.9);
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  position:relative;
-}
-
-.logo{
-  font-size:26px;
-  font-weight:700;
-  color:#00bfa6;
-}
-
-nav a{
-  margin:0 10px;
-  text-decoration:none;
-  color:#222;
-}
-
-nav a:hover{
-  color:#00bfa6;
-}
-
-.menu-toggle{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* ===== HERO ===== */
-.hero{
-  position:relative;
-  text-align:center;
-  padding:100px 20px;
-  background:
-    linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.95)),
-    url("images/smoke-bg.jpg") center/cover no-repeat;
-  overflow:hidden;
-}
-
-.hero h1{
-  font-size:42px;
-  color:#00bfa6;
-}
-
-.hero p{
-  max-width:600px;
-  margin:auto;
-}
-
-/* ===== SMOKE ANIMATION ===== */
-.smoke{
-  position:absolute;
-  inset:0;
-  background:url("images/smoke-bg.jpg") repeat;
-  opacity:0.25;
-  animation:smokeMove 60s linear infinite;
-  z-index:1;
-  pointer-events:none;
-}
-
-.hero h1,
-.hero p,
-.hero button{
-  position:relative;
-  z-index:2;
-}
-
-@keyframes smokeMove{
-  from{ background-position:0 0; }
-  to{ background-position:1500px 0; }
-}
-
-/* ===== BUTTON ===== */
-button{
-  padding:14px 30px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(45deg,#00ffcc,#00bfa6);
-  color:#000;
-  cursor:pointer;
-  font-weight:600;
-}
-
-/* ===== SLIDER ===== */
-.slider{
-  max-width:100%;
-  text-align:center;
-}
-.slides{
-  width:100%;
-  display:none;
-}
-
-/* ===== PRODUCTS ===== */
-.products{
-  padding:60px 20px;
-  text-align:center;
-}
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.product-card{
-  background:#f8f8f8;
-  padding:25px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-/* ===== AGE POPUP ===== */
+/* ===== AGE POPUP FIX ===== */
 .age-popup{
   position:fixed;
   inset:0;
@@ -136,63 +9,24 @@ button{
   z-index:9999;
 }
 
+/* popup hidden state */
+.age-popup.hide{
+  display:none;
+  pointer-events:none;
+}
+
 .age-box{
   background:#fff;
   padding:30px;
   border-radius:14px;
   text-align:center;
+  max-width:320px;
+  width:90%;
 }
 
-/* ===== FOOTER ===== */
-.footer{
-  padding:20px;
-  text-align:center;
-  background:#f1f1f1;
-  color:#777;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:768px){
-  nav{display:none; flex-direction:column;}
-  nav.active{display:flex;}
-  .menu-toggle{display:block;}
-}
-/* ===== SLIDER ===== */
-.slider{
-  text-align:center;
-  padding:40px 20px;
-}
-
-.slides{
+/* popup buttons clickable */
+.age-box button{
   width:100%;
-  max-width:900px;
-  display:none;
-  margin:auto;
-  border-radius:18px;
-}
-
-/* thumbnails */
-.thumbs{
-  margin-top:15px;
-}
-
-.thumbs img{
-  width:80px;
-  height:50px;
-  object-fit:cover;
-  margin:5px;
-  cursor:pointer;
-  border-radius:8px;
-  opacity:0.6;
-}
-
-.thumbs img:hover{
-  opacity:1;
-}
-
-/* product price */
-.price{
-  margin-top:6px;
-  color:#222;
-  font-weight:600;
+  margin-top:10px;
+  pointer-events:auto;
 }
