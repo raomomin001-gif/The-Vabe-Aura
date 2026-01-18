@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Vape Aura | Premium Vape Store</title>
-
-<meta name="description" content="The Vape Aura – Authentic vape devices in Pakistan">
+<title>The Vape Aura</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= AGE VERIFICATION ================= -->
+<!-- ===== 18+ POPUP ===== -->
 <div class="age-popup" id="agePopup">
   <div class="age-box">
     <h2>18+ Only</h2>
@@ -23,59 +20,69 @@
   </div>
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- ===== HEADER ===== -->
 <header class="header">
   <div class="logo">The Vape Aura</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="brands.html">Brands</a>
-    <a href="devices.html">Devices</a>
-    <a href="kits.html">Kits</a>
-    <a href="pods.html">Pods</a>
-    <a href="flavours.html">Flavours</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
+  <nav id="navMenu">
+    <a href="#">Home</a>
+    <a href="#">Devices</a>
+    <a href="#">Pods</a>
+    <a href="#">Flavours</a>
+    <a href="#">Contact</a>
   </nav>
 </header>
 
-<!-- ================= HERO WITH SMOKE ================= -->
-<section class="hero fade-section">
+<!-- ===== HERO ===== -->
+<section class="hero">
   <div class="smoke"></div>
   <h1>Premium Vape Experience</h1>
   <p>Original Products • Trusted Brands • Best Prices</p>
   <button onclick="openWhatsApp()">Order on WhatsApp</button>
 </section>
 
-<!-- ================= SLIDER ================= -->
-<section class="slider fade-section">
+<!-- ===== SLIDER ===== -->
+<section class="slider">
+  <img class="slides" src="images/slide1.jpg">
+  <img class="slides" src="images/slide2.jpg">
+  <img class="slides" src="images/slide3.jpg">
+  <img class="slides" src="images/slide4.jpg">
 
-  <img class="slides" src="images/slide1.jpg" alt="Vape Slide 1">
-  <img class="slides" src="images/slide2.jpg" alt="Vape Slide 2">
-  <img class="slides" src="images/slide3.jpg" alt="Vape Slide 3">
-  <img class="slides" src="images/slide4.jpg" alt="Vape Slide 4">
-
-  <!-- thumbnails -->
   <div class="thumbs">
-    <img src="images/slide1.jpg" onclick="currentSlide(1)" alt="">
-    <img src="images/slide2.jpg" onclick="currentSlide(2)" alt="">
-    <img src="images/slide3.jpg" onclick="currentSlide(3)" alt="">
-    <img src="images/slide4.jpg" onclick="currentSlide(4)" alt="">
+    <img src="images/slide1.jpg" onclick="currentSlide(1)">
+    <img src="images/slide2.jpg" onclick="currentSlide(2)">
+    <img src="images/slide3.jpg" onclick="currentSlide(3)">
+    <img src="images/slide4.jpg" onclick="currentSlide(4)">
   </div>
 </section>
 
-<!-- ================= PRODUCTS (JSON AUTO LOAD) ================= -->
-<section class="products fade-section">
-  <h2 style="text-align:center">Our Products</h2>
-  <div class="product-grid" id="productGrid">
-    <!-- vape_models.json se products yahan load honge -->
+<!-- ===== PRODUCTS ===== -->
+<section class="products">
+  <h2>Popular Products</h2>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="images/vape1.jpg">
+      <h3>Vape Device</h3>
+      <div class="price">Rs. 6,499</div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/vape2.jpg">
+      <h3>Pod System</h3>
+      <div class="price">Rs. 7,999</div>
+    </div>
+
+    <div class="product-card">
+      <img src="images/vape3.jpg">
+      <h3>Starter Kit</h3>
+      <div class="price">Rs. 12,999</div>
+    </div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
-  © 2026 The Vape Aura | WhatsApp: 0304-2249321
+© 2026 The Vape Aura | WhatsApp: 0304-2249321
 </footer>
 
 <script src="script.js"></script>
