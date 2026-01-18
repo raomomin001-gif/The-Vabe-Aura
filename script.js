@@ -1,40 +1,35 @@
-/* MENU */
 function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
+  document.getElementById("menu").classList.toggle("active");
 }
 
-/* WHATSAPP */
-function openWhatsApp(){
-  window.open("https://wa.me/923042249321","_blank");
-}
-
-/* SLIDER */
-let slideIndex = 0;
+let index=0;
 function showSlides(){
-  const slides = document.querySelectorAll(".slides");
+  const slides=document.querySelectorAll(".slides");
   slides.forEach(s=>s.style.display="none");
-  slideIndex++;
-  if(slideIndex>slides.length){slideIndex=1}
-  slides[slideIndex-1].style.display="block";
+  index++;
+  if(index>slides.length){index=1}
+  slides[index-1].style.display="block";
   setTimeout(showSlides,3000);
 }
-function currentSlide(n){
-  slideIndex=n-1;
-  showSlides();
-}
 
-/* AGE POPUP */
 function acceptAge(){
-  localStorage.setItem("ageVerified","yes");
   document.getElementById("agePopup").classList.add("hide");
-}
-function rejectAge(){
-  window.location.href="https://google.com";
+  localStorage.setItem("age","yes");
 }
 
-/* ON LOAD */
+function openWhatsApp(){
+  window.open(
+    "https://wa.me/923042249321?text=Hello%20I%20want%20to%20order%20from%20The%20Vape%20Aura",
+    "_blank"
+  );
+}
+
+function callNow(){
+  window.location.href="tel:03042249321";
+}
+
 document.addEventListener("DOMContentLoaded",()=>{
-  if(localStorage.getItem("ageVerified")==="yes"){
+  if(localStorage.getItem("age")==="yes"){
     document.getElementById("agePopup").classList.add("hide");
   }
   showSlides();
