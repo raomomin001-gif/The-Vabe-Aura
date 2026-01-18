@@ -2,179 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Vape Aura | Premium Vape Store</title>
-
-<meta name="description" content="The Vape Aura – Premium vape devices, pods, kits & flavours in Pakistan">
+<title>The Vape Aura</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ================= 18+ POPUP ================= -->
+<!-- 18+ POPUP -->
 <div class="age-popup" id="agePopup">
   <div class="age-box">
     <h2>18+ Only</h2>
     <p>This website is for adults only</p>
     <button onclick="acceptAge()">I am 18+</button>
-    <button onclick="denyAge()">Exit</button>
   </div>
 </div>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 <header class="header">
   <div class="logo">The Vape Aura</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
   <nav id="menu">
-    <a href="#">Home</a>
-    <a href="#">Brands</a>
-    <a href="#">Devices</a>
-    <a href="#">Kits</a>
-    <a href="#">Pods</a>
-    <a href="#">Flavours</a>
-    <a href="#">Pricing</a>
-    <a href="#">Contact</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#pricing">Pricing</a>
+    <a href="order.html">Online Order</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<!-- ================= HERO WITH SMOKE ================= -->
-<section class="hero fade-section">
+<!-- HERO -->
+<section class="hero">
   <div class="smoke"></div>
   <h1>Premium Vape Experience</h1>
-  <p>Original Products • Trusted Brands • Best Prices</p>
-  <button onclick="openWhatsApp()">Order on WhatsApp</button>
+  <p>Original • Trusted • Best Prices</p>
+  <button onclick="openWhatsApp()">WhatsApp Order</button>
   <button onclick="callNow()">Call Now</button>
 </section>
 
-<!-- ================= SLIDER ================= -->
-<section class="slider fade-section">
-  <img class="slide" src="images/slide1.jpg">
-  <img class="slide" src="images/slide2.jpg">
-  <img class="slide" src="images/slide3.jpg">
-  <img class="slide" src="images/slide4.jpg">
+<!-- SLIDER -->
+<section class="slider">
+  <img class="slides" src="images/slide1.jpg">
+  <img class="slides" src="images/slide2.jpg">
+  <img class="slides" src="images/slide3.jpg">
+  <img class="slides" src="images/slide4.jpg">
 </section>
 
-<!-- ================= PRODUCTS ================= -->
-<section class="products fade-section">
-  <h2>Popular Products</h2>
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <h2>Our Products</h2>
 
   <div class="product-grid">
-
     <div class="product-card">
       <img src="images/vape1.jpg">
       <h3>Vape Device</h3>
-      <div class="price">Rs. 6,499</div>
+      <p>High Quality</p>
+      <div class="price">Rs. 6,500</div>
     </div>
 
     <div class="product-card">
       <img src="images/vape2.jpg">
       <h3>Pod System</h3>
+      <p>Smooth & Portable</p>
       <div class="price">Rs. 7,999</div>
     </div>
 
     <div class="product-card">
-      <img src="images/vape3.jpg">
-      <h3>Starter Kit</h3>
-      <div class="price">Rs. 12,999</div>
-    </div>
-
-    <div class="product-card">
       <img src="images/flouer4.jpg">
-      <h3>Premium Flavours</h3>
-      <div class="price">Rs. 2,500</div>
+      <h3>Premium Flavour</h3>
+      <p>Rich Taste</p>
+      <div class="price">Rs. 3,200</div>
     </div>
-
   </div>
 </section>
 
-<!-- ================= WHY US ================= -->
-<section class="products fade-section">
-  <h2>Why Choose The Vape Aura?</h2>
-
-  <div class="why-grid">
-    <div class="why-card">✔ 100% Original Products</div>
-    <div class="why-card">✔ Trusted Brands</div>
-    <div class="why-card">✔ Best Prices</div>
-    <div class="why-card">✔ Fast WhatsApp Support</div>
-  </div>
+<!-- TRUST -->
+<section class="trust">
+  <div>🚚 Fast Delivery</div>
+  <div>⭐ 5 Star Rating</div>
+  <div>🔒 Secure Shopping</div>
 </section>
 
-<!-- ================= CONTACT ================= -->
-<section class="products fade-section">
-  <h2>Contact Us</h2>
-  <p>📞 Phone / WhatsApp: <strong>0304-2249321</strong></p>
-  <p>📧 Email: info@thevapeaura.com</p>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+  <p>📞 0304-2249321</p>
+  <p>📧 info@thevapeaura.com</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="footer">
-© 2026 The Vape Aura | All Rights Reserved
+© 2026 The Vape Aura
 </footer>
 
 <script src="script.js"></script>
-
-<script>
-/* ===== MOBILE MENU ===== */
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-
-/* ===== WHATSAPP ===== */
-function openWhatsApp(){
-  window.open(
-    "https://wa.me/923042249321?text=Hi%20I%20want%20to%20order%20from%20The%20Vape%20Aura",
-    "_blank"
-  );
-}
-
-/* ===== CALL ===== */
-function callNow(){
-  window.location.href="tel:+923042249321";
-}
-
-/* ===== AGE POPUP ===== */
-window.onload = function(){
-  document.body.style.overflow="hidden";
-};
-
-function acceptAge(){
-  document.getElementById("agePopup").style.display="none";
-  document.body.style.overflow="auto";
-}
-
-function denyAge(){
-  window.location.href="https://google.com";
-}
-
-/* ===== SLIDER ===== */
-let index = 0;
-const slides = document.getElementsByClassName("slide");
-
-function showSlider(){
-  for(let i=0;i<slides.length;i++){
-    slides[i].style.display="none";
-  }
-  index++;
-  if(index > slides.length){ index = 1; }
-  slides[index-1].style.display="block";
-  setTimeout(showSlider,3000);
-}
-showSlider();
-
-/* ===== SCROLL FADE ===== */
-const sections = document.querySelectorAll(".fade-section");
-window.addEventListener("scroll",()=>{
-  sections.forEach(sec=>{
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add("show");
-    }
-  });
-});
-</script>
-
 </body>
 </html>
