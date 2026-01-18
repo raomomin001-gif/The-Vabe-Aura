@@ -62,3 +62,72 @@ footer{text-align:center;padding:20px;border-top:1px solid #ddd}
 nav{display:none}
 nav.active{display:block}
 }
+/* ===== SMOKE BACKGROUND ===== */
+.hero{
+  position: relative;
+  min-height: 90vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* smoke image layer */
+.smoke{
+  position: absolute;
+  inset: 0;
+  background: url("images/smoke-bg.jpg") center/cover no-repeat;
+  opacity: 0.35;
+  z-index: 1;
+}
+
+/* moving smoke animation */
+.smoke::after{
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background: url("images/smoke-bg.jpg") center/cover repeat;
+  opacity: 0.25;
+  animation: smokeMove 30s linear infinite;
+}
+
+/* animation */
+@keyframes smokeMove{
+  0%{
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  50%{
+    transform: translateX(-5%) translateY(-5%) scale(1.1);
+  }
+  100%{
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+
+/* hero content above smoke */
+.hero h1,
+.hero p,
+.hero button{
+  position: relative;
+  z-index: 2;
+}
+
+/* buttons style (safe) */
+.hero button{
+  padding: 12px 22px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+}
+
+.hero button:hover{
+  background:#ddd;
+}
