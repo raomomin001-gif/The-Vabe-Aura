@@ -13,7 +13,7 @@
 
 <body>
 
-<!-- ===== AGE VERIFICATION ===== -->
+<!-- ================= AGE VERIFICATION ================= -->
 <div class="age-popup" id="agePopup">
   <div class="age-box">
     <h2>18+ Only</h2>
@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<!-- ===== HEADER ===== -->
+<!-- ================= HEADER ================= -->
 <header class="header">
   <div class="logo">The Vape Aura</div>
   <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -40,7 +40,7 @@
   </nav>
 </header>
 
-<!-- ===== HERO WITH SMOKE ===== -->
+<!-- ================= HERO WITH SMOKE ================= -->
 <section class="hero fade-section">
   <div class="smoke"></div>
   <h1>Premium Vape Experience</h1>
@@ -48,33 +48,34 @@
   <button onclick="openWhatsApp()">Order on WhatsApp</button>
 </section>
 
-<!-- ===== SLIDER ===== -->
+<!-- ================= SLIDER ================= -->
 <section class="slider fade-section">
-  <img class="slides" src="images/slide1.jpg">
-  <img class="slides" src="images/slide2.jpg">
-  <img class="slides" src="images/slide3.jpg">
-  <img class="slides" src="images/slide4.jpg">
+
+  <img class="slides" src="images/slide1.jpg" alt="Vape Slide 1">
+  <img class="slides" src="images/slide2.jpg" alt="Vape Slide 2">
+  <img class="slides" src="images/slide3.jpg" alt="Vape Slide 3">
+  <img class="slides" src="images/slide4.jpg" alt="Vape Slide 4">
 
   <!-- thumbnails -->
   <div class="thumbs">
-    <img src="images/slide1.jpg" onclick="currentSlide(1)">
-    <img src="images/slide2.jpg" onclick="currentSlide(2)">
-    <img src="images/slide3.jpg" onclick="currentSlide(3)">
-    <img src="images/slide4.jpg" onclick="currentSlide(4)">
+    <img src="images/slide1.jpg" onclick="currentSlide(1)" alt="">
+    <img src="images/slide2.jpg" onclick="currentSlide(2)" alt="">
+    <img src="images/slide3.jpg" onclick="currentSlide(3)" alt="">
+    <img src="images/slide4.jpg" onclick="currentSlide(4)" alt="">
   </div>
 </section>
 
-<!-- ===== PRODUCTS AUTO LOAD ===== -->
+<!-- ================= PRODUCTS (JSON AUTO LOAD) ================= -->
 <section class="products fade-section">
   <h2 style="text-align:center">Our Products</h2>
   <div class="product-grid" id="productGrid">
-    <!-- JSON se products yahan ayenge -->
+    <!-- vape_models.json se products yahan load honge -->
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-© 2026 The Vape Aura | WhatsApp: 0304-2249321
+  © 2026 The Vape Aura | WhatsApp: 0304-2249321
 </footer>
 
 <script src="script.js"></script>
