@@ -2,108 +2,58 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Online Order | The Vape Aura</title>
+<title>Online Order</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
-  font-family:Poppins,Arial,sans-serif;
-  background:linear-gradient(135deg,#f2f2f2,#e6e6e6);
-  margin:0;
+  font-family: Poppins, sans-serif;
+  background:#111;
+  color:#fff;
 }
-
-/* ===== CARD ===== */
 .section{
-  max-width:450px;
-  margin:50px auto;
-  background:#fff;
-  padding:30px;
-  border-radius:16px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
+  max-width:500px;
+  margin:40px auto;
+  padding:20px;
+  background:#1c1c1c;
+  border-radius:10px;
 }
-
-h2{
-  text-align:center;
-  margin-bottom:20px;
+input, textarea, select{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:5px;
 }
-
-/* ===== FORM ===== */
-.form input,
-.form textarea,
-.form select{
+button{
   width:100%;
   padding:12px;
-  margin-bottom:14px;
-  border-radius:10px;
-  border:1px solid #ccc;
-  font-size:14px;
-}
-
-/* ===== FILE INPUT ===== */
-.form label{
-  font-size:13px;
-  font-weight:600;
-  margin-bottom:5px;
-  display:block;
-}
-
-/* ===== BUTTON ===== */
-.submit-btn{
-  width:100%;
-  padding:14px;
+  background:linear-gradient(45deg,#00ffcc,#0066ff);
+  color:#000;
+  font-size:16px;
   border:none;
   border-radius:30px;
-  font-size:16px;
-  font-weight:600;
-  background:linear-gradient(45deg,#00ffcc,#00bfa6);
   cursor:pointer;
-  transition:0.3s;
-  box-shadow:0 6px 20px rgba(0,191,166,0.5);
+  animation:pulse 1.5s infinite;
 }
-
-.submit-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 12px 30px rgba(0,191,166,0.7);
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.05)}
+  100%{transform:scale(1)}
 }
-
-/* ===== POPUP ===== */
-.thankyou{
+.popup{
+  display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.85);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:9999;
+  background:rgba(0,0,0,.8);
 }
-
-.thank-box{
-  background:#fff;
-  padding:30px;
-  border-radius:14px;
+.popup-box{
+  background:#222;
+  padding:25px;
+  max-width:350px;
+  margin:100px auto;
   text-align:center;
-  animation:pop 0.4s ease;
-}
-
-@keyframes pop{
-  from{transform:scale(0.7);opacity:0;}
-  to{transform:scale(1);opacity:1;}
-}
-
-.thank-box h3{
-  color:#00bfa6;
-}
-
-.thank-box button{
-  margin-top:15px;
-  padding:10px 25px;
-  border:none;
-  border-radius:25px;
-  background:#00bfa6;
-  font-weight:600;
-  cursor:pointer;
+  border-radius:10px;
 }
 </style>
 </head>
@@ -113,77 +63,90 @@ h2{
 <section class="section">
 <h2>Online Order Form</h2>
 
-<form class="form" onsubmit="sendOrder(event)">
+<form id="orderForm" enctype="multipart/form-data">
+<input name="name" placeholder="Full Name" required>
+<input name="phone" placeholder="Phone Number" required>
+<input name="product" placeholder="Product Name" required>
 
-<input id="name" placeholder="Full Name" required>
-<input id="phone" placeholder="Phone Number" required>
-
-<input id="cnic" placeholder="CNIC Number (xxxxx-xxxxxxx-x)" required>
-
-<select id="mg" required>
-  <option value="">Select Nicotine Strength</option>
-  <option>3 MG</option>
-  <option>6 MG</option>
-  <option>30 MG</option>
-  <option>50 MG</option>
+<select name="mg" required>
+  <option value="">Select MG</option>
+  <option>3mg</option>
+  <option>6mg</option>
+  <option>30mg</option>
+  <option>50mg</option>
 </select>
 
-<input id="product" placeholder="Product Name" required>
+<textarea name="address" placeholder="Full Address" required></textarea>
 
-<textarea id="address" placeholder="Complete Address" required></textarea>
+<label>CNIC Number</label>
+<input name="cnic" placeholder="xxxxx-xxxxxxx-x" required>
 
-<!-- FILE UPLOADS -->
 <label>CNIC Front Image</label>
-<input type="file" accept="image/*" required>
+<input type="file" name="cnic_front" accept="image/*" required>
 
 <label>CNIC Back Image</label>
-<input type="file" accept="image/*" required>
+<input type="file" name="cnic_back" accept="image/*" required>
 
 <label>Passport Size Photo</label>
-<input type="file" accept="image/*" required>
+<input type="file" name="passport" accept="image/*" required>
 
-<button class="submit-btn" type="submit">
-Submit Order on WhatsApp
-</button>
-
+<button type="submit">Place Order</button>
 </form>
 </section>
 
-<!-- THANK YOU -->
-<div class="thankyou" id="thankPopup">
-  <div class="thank-box">
-    <h3>Thank You! ✅</h3>
-    <p>Your order details have been sent.<br>
-    Please send images on WhatsApp.</p>
+<!-- THANK YOU POPUP -->
+<div class="popup" id="thanksPopup">
+  <div class="popup-box">
+    <h3>Thank You!</h3>
+    <p>Your order has been submitted.<br>
+    Please send images again on WhatsApp for verification.</p>
     <button onclick="closePopup()">OK</button>
   </div>
 </div>
 
 <script>
-function sendOrder(e){
-  e.preventDefault();
-
-  const msg =
-`🛒 *New Online Order*
-👤 Name: ${name.value}
-📞 Phone: ${phone.value}
-🆔 CNIC: ${cnic.value}
-💨 MG: ${mg.value}
-📦 Product: ${product.value}
-🏠 Address: ${address.value}
-
-📸 Images will be sent separately`;
-
-  window.open(
-    "https://wa.me/923042249321?text=" + encodeURIComponent(msg),
-    "_blank"
-  );
-
-  document.getElementById("thankPopup").style.display="flex";
+function generateOrderID(){
+  return "TVA-" + Math.floor(100000 + Math.random()*900000);
 }
 
+document.getElementById("orderForm").addEventListener("submit",function(e){
+e.preventDefault();
+
+let files=[
+ this.cnic_front.files[0],
+ this.cnic_back.files[0],
+ this.passport.files[0]
+];
+
+for(let f of files){
+ if(f.size > 2*1024*1024){
+   alert("Image size max 2MB allowed");
+   return;
+ }
+}
+
+let orderID = generateOrderID();
+let formData = new FormData(this);
+formData.append("order_id",orderID);
+
+fetch("order-submit.php",{method:"POST",body:formData});
+
+let msg = 
+"🧾 Order ID: "+orderID+
+"\n👤 Name: "+this.name.value+
+"\n📞 Phone: "+this.phone.value+
+"\n📦 Product: "+this.product.value+
+"\n💨 MG: "+this.mg.value+
+"\n🏠 Address: "+this.address.value+
+"\n🪪 CNIC: "+this.cnic.value;
+
+window.open("https://wa.me/923042249321?text="+encodeURIComponent(msg));
+
+document.getElementById("thanksPopup").style.display="block";
+});
+
 function closePopup(){
-  document.getElementById("thankPopup").style.display="none";
+ document.getElementById("thanksPopup").style.display="none";
 }
 </script>
 
